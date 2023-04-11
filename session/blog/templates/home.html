@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-금장이의 블로그 홈페이지!!
+아기사자
 {% endblock title %}
 
 {% block extrahead %}
@@ -12,7 +12,7 @@
 {% block content %}
 
 <h1>LIKELION 11 Blog Project
-    <img src="{% static 'blog/img/emoticon.png' %}" alt="이모티콘">
+    <img src="{% static 'blog/img/logo.png' %}" alt="로고" width="50">
 </h1>
 <a href="{% url 'new' %}">새 글 작성하기</a>
 <div>
@@ -28,7 +28,9 @@
 <span>
     {% if page_obj.has_previous %}
     <a href="?page=1">처음으로</a>
+    &nbsp;
     <a href="?page={{page_obj.previous_page_number}}">이전</a>
+    &nbsp;
     {% endif %}
 
     <p>{{page_obj.number}}</p>
@@ -36,7 +38,9 @@
     <p>{{page_obj.paginator.num_pages}}</p>
 
     {% if page_obj.has_next %}
+    &nbsp;
     <a href="?page={{page_obj.next_page_number}}">다음</a>
+    &nbsp;
     <a href="?page={{page_obj.paginator.num_pages}}">마지막으로</a>
     {% endif %}
 </span>
